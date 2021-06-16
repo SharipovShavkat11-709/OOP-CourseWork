@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="anchorPaneBaseMain" prefHeight="250.0" prefWidth="400.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.main.MainController">
+    <stylesheets>
+        <URL value="@/style/style.css" />
+    </stylesheets>
+   <children>
+      <GridPane layoutX="14.0" layoutY="72.0" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="70.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="textFieldLastName" alignment="CENTER" layoutX="74.0" layoutY="10.0" promptText="Фамилия" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+               <children>
+                  <PasswordField fx:id="passwordFieldPassword" alignment="CENTER" layoutX="108.0" layoutY="10.0" promptText="Пароль" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </PasswordField>
+               </children>
+            </AnchorPane>
+         </children>
+      </GridPane>
+      <Button fx:id="buttonClose" layoutX="334.0" layoutY="211.0" mnemonicParsing="false" onAction="#buttonCloseOnAction" prefHeight="25.0" prefWidth="100.0" text="Закрыть" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+      <CheckBox fx:id="checkBoxManager" layoutX="14.0" layoutY="224.0" mnemonicParsing="false" text="Менеджер" textFill="#00ff0d" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" />
+      <Hyperlink fx:id="hyperlinkRegistration" layoutX="240.0" layoutY="179.0" onAction="#hyperlinkRegistrationOnAction" text="Зарегистрироваться" textFill="#f7ff07" AnchorPane.bottomAnchor="60.0" AnchorPane.rightAnchor="5.0" />
+      <Circle fx:id="circleConnection" fill="#1fff44" layoutX="342.0" layoutY="28.0" radius="20.0" stroke="#1fff44" strokeType="INSIDE" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+      <Label fx:id="labelConnectionOK" alignment="CENTER" layoutX="356.0" layoutY="17.0" prefHeight="40.0" prefWidth="40.0" text="OK" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+      <Button fx:id="buttonEnter" layoutX="150.0" layoutY="166.0" mnemonicParsing="false" onAction="#buttonEnterOnAction" prefHeight="25.0" prefWidth="100.0" text="Войти" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" />
+   </children>
+</AnchorPane>

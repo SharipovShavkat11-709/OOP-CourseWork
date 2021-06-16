@@ -1,0 +1,180 @@
+#anchorPaneBaseMain{
+    -fx-background-color: linear-gradient(to left, rgb(17, 43, 77), rgb(120, 107, 175));
+}
+
+.text-field{
+
+    
+    -fx-background-color: #ecf2f9;
+    -fx-font-size: 14px;
+}
+
+#textFieldLastName, #passwordFieldPassword{
+    -fx-background-color: transparent;
+    -fx-text-fill: yellow;
+    -fx-border-width: 0 0 2 0; /* top, right, bottom, left*/
+    -fx-border-color: blueviolet;
+}
+
+
+
+
+
+.date-picker {
+    -fx-font-size: 12px;
+
+} 
+
+.date-picker .text-field{
+    -fx-font-size: 12px;
+} 
+
+.date-picker .arrow-button{
+    -fx-background-color: linear-gradient(#000000, #b2baea); 
+} 
+
+/*Псевдо класс hover - действия при наведении мыши*/
+.date-picker .arrow-button:hover {
+    -fx-background-color: linear-gradient(#2a5058, #363945);
+}
+
+/*Псевдо класс armed - действие при нажатии*/
+.date-picker .arrow-button:armed {
+    -fx-background-color: radial-gradient(radius 50%, #61a2b1, #2a4558, #2a5058);
+}
+
+#checkBoxManager{
+    -fx-background-radius: 10px;
+}
+
+#anchorPaneBaseManagerStart, #anchorPaneCarReservationManager,#anchorPaneCarRentalManager, #anchorPaneManagerReservationInfo, 
+#anchorPaneBaseClientStart, #anchorPaneApplicationsMade, #anchorPaneCarRental, #anchorPaneCarBooking, #anchorPaneBaseClientInfo, #anchorPaneBaseRegistrationEditClient{
+    -fx-background-color: linear-gradient(#ecf2f9, #2d5986);
+}
+
+#anchorPaneBaseDialogConfirm{
+    -fx-background-color: linear-gradient(to right, #71a9ea, #e6eefa);
+}
+
+.menu-bar {
+    -fx-background-color: #c2c2f0;
+}
+
+.menu-bar .container .menu:openvertically:hover{
+    -fx-background-color: #eaeafa;
+}
+
+.menu .label .text {
+    -fx-fill: WHITE;
+}
+
+.menu-item{
+   -fx-background-color: #79a6d2; 
+}
+
+.menu-item:hover{
+   -fx-background-color: #99b3e6; 
+}
+
+
+.titled-pane:expanded .title{
+    -fx-background-color: linear-gradient(to right, #ccccff, #0000b3);
+}
+
+.titled-pane:collapsed .title{
+    -fx-background-color: linear-gradient(to right, #0000b3, #ccccff);
+}
+
+.titled-pane:collapsed .title .text{
+    -fx-fill: white;
+}
+
+
+#anchorPaneAbout{
+    -fx-background-color: linear-gradient(#ebf0fa, #24478f);
+}
+
+#anchorPaneBaseDictionary, #anchorPaneManagerShowPhoto{
+    -fx-background-color: linear-gradient(#e6f5ff, #006bb3);
+}
+
+#anchorPaneBaseAddEditDictionary{
+    -fx-background-color: linear-gradient(#f0f0f5, #52527a);
+}
+
+.date_error > .text-field{
+    -fx-control-inner-background: red;
+    -fx-background-color: red;
+}
+
+.combo_bor_car_center_warning .list-cell:selected {
+    -fx-text-fill: orange;
+}
+
+.button {
+    -fx-text-fill: white;
+    -fx-font-family: "Arial Narrow";
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(#cce6ff, #8080ff);
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 5, 0.0, 0, 1);	
+}
+
+/*Псевдо класс hover - действия при наведении мыши*/
+.button:hover {
+    -fx-background-color: linear-gradient(#8080ff, #cce6ff);
+}
+/*Псевдо класс armed - действие при нажатии*/
+.button:armed {
+    -fx-background-color: radial-gradient(radius 50%, #264d73, #79a6d2, #d9e6f2);
+}
+
+.combo-box {
+    -fx-background-color: linear-gradient(#818186, #b2baea);
+    -fx-background-radius: 14px;
+}
+
+.combo-box:hover {
+    -fx-background-color: linear-gradient(#b2baea, #818186);
+}
+
+
+.combo-box-popup .list-view .list-cell{
+    -fx-background-color: linear-gradient(#e6e6ff, #0000cc);   
+}
+
+.combo-box-popup .list-cell:first{
+    -fx-background-radius: 14px;   
+}
+
+.combo-box-popup .list-view .list-cell:selected{
+    -fx-background-color: #79a6d2;
+    -fx-text-fill: WHITE;
+}
+
+.combo-box-popup .list-view .list-cell:hover{
+    -fx-background-color: #e6ffff;
+    -fx-text-fill: grey;
+}
+
+.table-view{
+-fx-background-color: transparent;
+} 
+
+.table-view .column-header-background{
+-fx-background-color: linear-gradient(#ccf2ff, #0086b3);
+} 
+
+
+.table-view .column-header {
+-fx-background-color: transparent;
+} 
+
+.table-view .column-header-background .label{
+-fx-background-color: transparent;
+-fx-text-fill: white;
+}
+
+/*пустая таблица*/
+.table-view:row-selection:constrained-resize .placeholder{
+    -fx-background-color: linear-gradient(#ccf2ff, #0099cc);
+}

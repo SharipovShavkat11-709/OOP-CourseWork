@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="anchorPaneAbout" prefHeight="300.0" prefWidth="400.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.main.AboutController">
+    <stylesheets>
+        <URL value="@/style/style.css" />
+    </stylesheets>
+   <children>
+      <Label alignment="CENTER" layoutX="-2.0" layoutY="25.0" prefHeight="25.0" prefWidth="400.0" text="АРЕНДА АВТОМОБИТЕЙ" textFill="#00ff09" underline="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelDate" alignment="CENTER" layoutX="200.0" layoutY="259.0" prefHeight="25.0" prefWidth="400.0" text="© 2021 - " textFill="#00ff48" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <TextArea disable="true" editable="false" layoutX="10.0" layoutY="113.0" opacity="0.75" prefHeight="116.0" prefWidth="380.0" text="Аренда автомобилей по всей стране без водителя. Низкие цены. Большой выбор авто. Бронирование производится через данную программу." wrapText="true" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="100.0">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </TextArea>
+      <Button fx:id="buttonOk" layoutX="175.0" layoutY="265.0" mnemonicParsing="false" onAction="#buttonOkOnAction" prefHeight="25.0" prefWidth="50.0" text="Ок" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="175.0" AnchorPane.rightAnchor="175.0" />
+   </children>
+</AnchorPane>

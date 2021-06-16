@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="anchorPaneBaseManagerStart" prefHeight="700.0" prefWidth="900.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.manager.ManagerStartWindowController">
+    <stylesheets>
+        <URL value="@/style/style.css" />
+    </stylesheets>
+   <children>
+      <MenuBar layoutX="14.0" layoutY="14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Файл">
+            <items>
+              <MenuItem fx:id="menuItemExit" mnemonicParsing="false" onAction="#menuItemExitOnAction" text="Выход" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Справочники">
+            <items>
+                  <Menu mnemonicParsing="false" text="Автомобили">
+                     <items>
+                    <MenuItem fx:id="menuItemCar" mnemonicParsing="false" onAction="#menuItemCarOnAction" text="Автомобили" />
+                        <MenuItem fx:id="menuItemBrandCar" mnemonicParsing="false" onAction="#menuItemCarBrandOnAction" text="Марки авто" />
+                        <MenuItem fx:id="menuItemTypeCar" mnemonicParsing="false" onAction="#menuItemCarTypeOnAction" text="Типы авто" />
+                        <MenuItem fx:id="menuItemFuelType" mnemonicParsing="false" onAction="#menuItemFuelTypeOnAction" text="Типы топлива" />
+                     </items>
+                  </Menu>
+                  <MenuItem fx:id="menuItemCarCenter" mnemonicParsing="false" onAction="#menuItemCarCenterOnAction" text="Центры проката" />
+                  <MenuItem fx:id="menuItemDiscount" mnemonicParsing="false" onAction="#menuItemDiscountOnAction" text="Скидки" />
+                  <MenuItem fx:id="menuItemClient" mnemonicParsing="false" onAction="#menuItemClientOnAction" text="Клиенты" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="О программе">
+            <items>
+              <MenuItem fx:id="menuItemAbout" mnemonicParsing="false" onAction="#menuItemAboutOnAction" text="О программе" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Accordion fx:id="accordionBaseManagerStartWindow" layoutX="14.0" layoutY="40.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+        <panes>
+          <TitledPane animated="false" text="Заявки">
+            <content>
+              <AnchorPane fx:id="anchorPaneCarReservationManager" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ComboBox fx:id="comboBoxReservationStatus" layoutX="21.0" layoutY="510.0" prefWidth="150.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" />
+                        <Button fx:id="buttonApplicationCancel" layoutX="721.0" layoutY="514.0" mnemonicParsing="false" onAction="#buttonApplicationCancelOnAction" prefHeight="25.0" prefWidth="100.0" text="Отказать" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                        <Button fx:id="buttonApplicationOk" layoutX="628.0" layoutY="514.0" mnemonicParsing="false" onAction="#buttonApplicationOkOnAction" prefHeight="25.0" prefWidth="100.0" text="Одобрить" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="115.0" />
+                        <SplitPane dividerPositions="0.5" layoutX="308.0" layoutY="295.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                    <TableView fx:id="tableViewApplication" layoutX="-21.0" layoutY="52.0" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columns>
+                                        <TableColumn fx:id="tableColumnId" maxWidth="200.0" minWidth="50.0" prefWidth="100.0" text="ID" />
+                                        <TableColumn fx:id="tableColumnDateApplication" prefWidth="75.0" text="Дата заявки" />
+                                          <TableColumn fx:id="tableColumnDateReceiving" prefWidth="75.0" text="Дата получения" />
+                                          <TableColumn fx:id="tableColumnDateReturn" prefWidth="75.0" text="Дата возврата" />
+                                          <TableColumn fx:id="tableColumnReservationStatus" prefWidth="75.0" text="Статус" />
+                                      </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane fx:id="anchorPaneManagerReservationInfo" minHeight="0.0" minWidth="0.0">
+                                 <children>
+                                    <GridPane layoutX="102.0" layoutY="48.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <GridPane prefHeight="150.0" prefWidth="326.0" vgap="2.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="158.0" minWidth="10.0" prefWidth="133.99999237060547" />
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="266.99999237060547" minWidth="10.0" prefWidth="255.00000762939453" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <Label text="Клиент" textFill="RED" />
+                                                <Label text="ФИО" GridPane.rowIndex="1" />
+                                                <Label text="Паспорт" GridPane.rowIndex="2" />
+                                                <Label text="День рождения" GridPane.rowIndex="3" />
+                                                <Label text="Телефон" GridPane.rowIndex="4" />
+                                                <Label fx:id="labelClientFIO" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <Label fx:id="labelClientPassport" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <Label fx:id="labelClientBirthday" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                <Label fx:id="labelClientPhone" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                <Label text="Данные бронирования" textFill="RED" GridPane.rowIndex="5" />
+                                                <Label text="Центр получения" GridPane.rowIndex="6" />
+                                                <Label text="Центр возврата" GridPane.rowIndex="7" />
+                                                <Label text="Итоговая стоимость" GridPane.rowIndex="8" />
+                                                <Label fx:id="labelApplicationCarCenterReceiving" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                                <Label fx:id="labelApplicationCarCenterReturn" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                                <Label fx:id="labelApplicationTotalPrice" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                             </children>
+                                          </GridPane>
+                                          <GridPane prefHeight="205.0" prefWidth="326.0" vgap="2.0" GridPane.columnIndex="1">
+                                             <children>
+                                                <Label text="Автомобиль" textFill="RED" />
+                                                <Label text="Марка" GridPane.rowIndex="1" />
+                                                <Label text="Модель" GridPane.rowIndex="2" />
+                                                <Label text="Тип" GridPane.rowIndex="3" />
+                                                <Label text="Цвет" GridPane.rowIndex="4" />
+                                                <Label text="Адрес" GridPane.rowIndex="6" />
+                                                <Label text="Цена/сутки" GridPane.rowIndex="7" />
+                                                <Label text="Регистрационный номер" GridPane.rowIndex="5" />
+                                                <Label fx:id="labelCarBrand" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <Label fx:id="labelCarModel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <Label fx:id="labelCarType" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                <Label fx:id="labelCarColor" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                <Label fx:id="labelCarNumber" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                <Label fx:id="labelCarCarCenter" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                                <Label fx:id="labelCarPrice" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                             </children>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="158.0" minWidth="10.0" prefWidth="107.00000762939453" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="218.99999237060547" minWidth="10.0" prefWidth="218.99999237060547" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                          </GridPane>
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                        <Button fx:id="buttonRefresh" layoutX="179.0" layoutY="614.0" mnemonicParsing="false" onAction="#buttonRefreshOnAction" prefHeight="25.0" prefWidth="100.0" text="Обновить" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="155.0" />
+                     </children></AnchorPane>
+              
+            </content>
+          </TitledPane>
+          <TitledPane animated="false" text="Автомобили в прокате">
+            <content>
+              <AnchorPane fx:id="anchorPaneCarRentalManager" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableViewRental" layoutX="14.0" layoutY="7.0" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                              <TableColumn fx:id="tableColumnRentalId" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" text="ID" />
+                              <TableColumn fx:id="tableColumnRentalIdReservation" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" text="ID брони" />
+                            <TableColumn fx:id="tableColumnRentalCar" minWidth="175.0" prefWidth="175.0" text="Авто" />
+                            <TableColumn fx:id="tableColumnRentalDateReceiving" prefWidth="75.0" text="Дата получения" />
+                              <TableColumn fx:id="tableColumnRentalDateReturn" prefWidth="75.0" text="Дата возврата" />
+                              <TableColumn fx:id="tableColumnRentalPrice" prefWidth="75.0" text="Оплата" />
+                              <TableColumn fx:id="tableColumnRentalTotalPrice" prefWidth="75.0" text="Итоговая оплата" />
+                              <TableColumn fx:id="tableColumnRentalStatus" prefWidth="75.0" text="Статус" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <ComboBox fx:id="comboBoxRentalStatus" layoutX="14.0" layoutY="560.0" prefWidth="150.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" />
+                        <Button fx:id="buttonCarReturn" layoutX="832.0" layoutY="560.0" mnemonicParsing="false" onAction="#buttonCarReturnCloseOnAction" prefHeight="25.0" prefWidth="100.0" text="Вернуть авто" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                        <Button fx:id="buttonRentalRefresh" layoutX="179.0" layoutY="564.0" mnemonicParsing="false" onAction="#buttonRentalRefreshOnAction" prefHeight="25.0" prefWidth="100.0" text="Обновить" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="155.0" />
+                        <CheckBox fx:id="checkBoxDebtors" layoutX="278.0" layoutY="593.0" mnemonicParsing="false" text="Должники" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="270.0" />
+                        <Button fx:id="buttonAddCash" layoutX="721.0" layoutY="589.0" mnemonicParsing="false" onAction="#buttonAddCashOnAction" prefHeight="25.0" prefWidth="100.0" text="Доплатить" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="115.0" />
+                        <Label fx:id="labelReservationDateReturn" layoutX="14.0" layoutY="564.0" text="Label" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="0.0" />
+                     </children></AnchorPane>
+            </content>
+          </TitledPane>
+        </panes>
+      </Accordion>
+   </children>
+</AnchorPane>
